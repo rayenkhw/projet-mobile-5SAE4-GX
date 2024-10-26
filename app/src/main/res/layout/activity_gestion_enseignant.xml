@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".gestionEnseignant"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="55dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="75dp">
+
+        <TextView
+            android:id="@+id/GestionEnseignant"
+            android:layout_width="193dp"
+            android:layout_height="53dp"
+
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="152dp"
+            android:text="Gestion des Enseignant"
+            android:textColor="@color/violet"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="257dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/GestionEnseignantCard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="272dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="20dp"
+                    tools:layout_editor_absoluteY="272dp">
+
+                    <TextView
+                        android:id="@+id/addEnseignant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/addEnseignantImage"
+                        android:layout_centerHorizontal="true"
+
+
+                        android:text="Ajout Enseignant"
+                        android:textColor="@color/violet"
+                        android:textSize="13sp"
+                        tools:layout_editor_absoluteX="59dp"
+                        tools:layout_editor_absoluteY="367dp" />
+
+                    <ImageView
+                        android:id="@+id/addEnseignantImage"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/add_prof"
+                        tools:layout_editor_absoluteX="73dp"
+                        tools:layout_editor_absoluteY="287dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/consulterEnseignantCard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
+                tools:layout_editor_absoluteX="216dp"
+                tools:layout_editor_absoluteY="272dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="216dp"
+                    tools:layout_editor_absoluteY="272dp">
+
+                    <TextView
+                        android:id="@+id/listEnseignant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/listEnseignantImage"
+                        android:layout_centerHorizontal="true"
+
+
+                        android:text="Consulter les Enseignants"
+                        android:textColor="@color/violet"
+                        android:textSize="13sp"
+                        tools:layout_editor_absoluteX="229dp"
+                        tools:layout_editor_absoluteY="367dp" />
+
+                    <ImageView
+                        android:id="@+id/listEnseignantImage"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/list_club"
+                        tools:layout_editor_absoluteX="269dp"
+                        tools:layout_editor_absoluteY="287dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="12dp"
+
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addNoteCard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="467dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="20dp"
+                    tools:layout_editor_absoluteY="467dp">
+
+                    <TextView
+                        android:id="@+id/addNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/addNoteImage"
+                        android:layout_centerHorizontal="true"
+
+
+                        android:text="Ajout d'une note"
+                        android:textColor="@color/violet"
+                        android:textSize="13sp"
+                        tools:layout_editor_absoluteX="61dp"
+                        tools:layout_editor_absoluteY="562dp" />
+
+                    <ImageView
+                        android:id="@+id/addNoteImage"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/note"
+                        tools:layout_editor_absoluteX="73dp"
+                        tools:layout_editor_absoluteY="482dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/listNotesCard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
+                tools:layout_editor_absoluteX="216dp"
+                tools:layout_editor_absoluteY="467dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="216dp"
+                    tools:layout_editor_absoluteY="467dp">
+
+                    <TextView
+                        android:id="@+id/listNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/listNoteImage"
+                        android:layout_centerHorizontal="true"
+
+
+                        android:text="Consulter les notes"
+                        android:textColor="@color/violet"
+                        android:textSize="13sp"
+                        tools:layout_editor_absoluteX="248dp"
+                        tools:layout_editor_absoluteY="562dp" />
+
+                    <ImageView
+                        android:id="@+id/listNoteImage"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/list_club"
+                        tools:layout_editor_absoluteX="269dp"
+                        tools:layout_editor_absoluteY="482dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/backbutton"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="183dp"
+            android:rotation="-180"
+            android:src="@drawable/logout"
+            app:layout_constraintBottom_toTopOf="@+id/row1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Entite.MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".item_club"
+            android:exported="false" />
+        <activity
+            android:name=".listClub1"
+            android:exported="false" />
+        <activity
+            android:name=".GestionClasse"
+            android:exported="false" />
+        <activity
+            android:name=".GestionClub"
+            android:exported="false" />
+        <activity
+            android:name=".GestionEnseignant"
+            android:exported="false" />
+        <activity
+            android:name=".GestionEtudiant"
+            android:exported="false" />
+        <activity
+            android:name=".AccueilPrincipal"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutEvaluation"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutEvenement"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutClub"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutClasse"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutEtudiant"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutEnseignant"
+            android:exported="false" />
+        <activity
+            android:name=".ListeEvenement"
+            android:exported="false" />
+        <activity
+            android:name=".ListeClasse"
+            android:exported="false" />
+        <activity
+            android:name=".ListeClubs"
+            android:exported="false" />
+        <activity
+            android:name=".ListeEvaluations"
+            android:exported="false" />
+        <activity
+            android:name=".ListeEnseignants"
+            android:exported="false" />
+        <activity
+            android:name=".ListeEtudiants"
+            android:exported="false" />
+            <activity
+        android:name=".EnseignantDetail"
+        android:exported="false" />
+        <activity
+        android:name=".EvaluationDetail"
+        android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

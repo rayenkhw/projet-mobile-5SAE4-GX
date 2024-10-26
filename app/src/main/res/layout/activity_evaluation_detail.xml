@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homebkg1"
+    tools:context=".EvaluationDetail">
+
+    <!-- Add UI elements to display enseignant details -->
+
+    <EditText
+        android:id="@+id/noteExamenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/noteCcTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noteExamenTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/remarqueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noteCcTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:inputType="textEmailAddress" />
+
+
+
+
+    <Button
+        android:id="@+id/buttonModifier1"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="37dp"
+        android:text="Modifier" />
+
+    <Button
+        android:id="@+id/buttonDelete1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonModifier1"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="-50dp"
+        android:text="Supprimer" />
+
+</RelativeLayout>
