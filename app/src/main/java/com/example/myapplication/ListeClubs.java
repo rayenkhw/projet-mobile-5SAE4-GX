@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,10 +23,9 @@ public class ListeClubs extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ClubAdapter clubAdapter;
-
     private List<Club> clubs = new ArrayList<>();
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

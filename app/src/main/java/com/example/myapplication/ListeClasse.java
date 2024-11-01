@@ -9,10 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.myapplication.Entite.Classe;
-import com.example.myapplication.Entite.Club;
 import com.example.myapplication.Entite.MyDatabase;
 import com.example.myapplication.Interface.ClasseDao;
-import com.example.myapplication.Interface.ClubDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +25,10 @@ public class ListeClasse extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajout_classe);
+        setContentView(R.layout.activity_liste_classe);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.clubRecyclerView);
+        recyclerView = findViewById(R.id.classeRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize and set the adapter
@@ -39,7 +37,7 @@ public class ListeClasse extends AppCompatActivity {
 
 
         // Set item click listener
-        classeAdapter.setOnItemClickListener(new ClubAdapter.OnItemClickListener() {
+        classeAdapter.setOnItemClickListener(new ClasseAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 if (classes != null && position < classes.size()) {

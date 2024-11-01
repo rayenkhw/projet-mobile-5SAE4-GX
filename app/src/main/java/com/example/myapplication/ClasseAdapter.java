@@ -15,7 +15,7 @@ public class ClasseAdapter extends RecyclerView.Adapter<ClasseAdapter.ClasseView
 
     private List<Classe> classes;
     private int selectedItem = RecyclerView.NO_POSITION;
-    private ClubAdapter.OnItemClickListener onItemClickListener;
+    private ClasseAdapter.OnItemClickListener onItemClickListener;
 
     public ClasseAdapter(List<Classe> classes) {
         this.classes = classes;
@@ -28,14 +28,14 @@ public class ClasseAdapter extends RecyclerView.Adapter<ClasseAdapter.ClasseView
         this.classes = classes;
         notifyDataSetChanged();
     }
-    public void setOnItemClickListener(ClubAdapter.OnItemClickListener listener) {
+    public void setOnItemClickListener(ClasseAdapter.OnItemClickListener listener) {
         this.onItemClickListener = listener;
     }
 
     @androidx.annotation.NonNull
     @Override
     public ClasseAdapter.ClasseViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_classe, parent, false);
         return new ClasseAdapter.ClasseViewHolder(itemView);
     }
 

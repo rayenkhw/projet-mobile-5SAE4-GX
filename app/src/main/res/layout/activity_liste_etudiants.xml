@@ -53,6 +53,13 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Prenom"
+            tools:layout_editor_absoluteX="272dp"
+            tools:layout_editor_absoluteY="149dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Identifiant"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="149dp" />
@@ -60,16 +67,11 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prenom"
+            android:text="Nom"
             tools:layout_editor_absoluteX="142dp"
             tools:layout_editor_absoluteY="149dp" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nom"
-            tools:layout_editor_absoluteX="272dp"
-            tools:layout_editor_absoluteY="149dp" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,9 +84,9 @@
 
     <Button
         android:id="@+id/buttonmodifier"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="31dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="128dp"
         android:layout_marginBottom="69dp"
         android:layout_weight="1"
 
