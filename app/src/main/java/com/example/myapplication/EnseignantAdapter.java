@@ -21,6 +21,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
 
     private List<Enseignant> enseignants;
     private int selectedItem = RecyclerView.NO_POSITION;
+    private OnItemClickListener listener;
 
     private List<Enseignant> filteredEnseignants;  // Add this line
 
@@ -33,6 +34,8 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
 
         this.context = context;
     }
+
+
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -102,6 +105,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
                 context.startActivity(intent);
             }
         });
+
     }
 
     @Override
