@@ -31,8 +31,8 @@
     <!--editTextText2-->
     <EditText
         android:id="@+id/nomclub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="58dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
@@ -45,8 +45,8 @@
 
     <EditText
         android:id="@+id/president"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="226dp"
+        android:layout_height="62dp"
         android:layout_marginStart="1dp"
         android:layout_marginBottom="36dp"
         android:ems="10"
@@ -59,8 +59,8 @@
 
     <EditText
         android:id="@+id/vicep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="229dp"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="text"
@@ -73,8 +73,8 @@
 
     <EditText
         android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="216dp"
+        android:layout_height="63dp"
         android:layout_marginStart="8dp"
 
         android:layout_marginBottom="190dp"
@@ -88,8 +88,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="181dp"
-        android:layout_height="0dp"
+        android:layout_width="191dp"
+        android:layout_height="62dp"
         android:layout_marginBottom="119dp"
         android:text="Ajouter"
         android:textSize="25sp"

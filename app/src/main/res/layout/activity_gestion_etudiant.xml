@@ -40,7 +40,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="253dp">
+            tools:layout_editor_absoluteY="253dp"
+            tools:ignore="MissingConstraints">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/GestionEtudiantCard"

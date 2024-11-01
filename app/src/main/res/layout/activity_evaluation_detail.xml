@@ -9,32 +9,35 @@
 
     <EditText
         android:id="@+id/noteExamenTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="64dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:textSize="18sp"
-        android:inputType="text" />
+        android:inputType="text"
+        android:text="note examen"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/noteCcTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="57dp"
         android:layout_below="@id/noteExamenTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:inputType="text" />
+        android:inputType="text"
+        android:text="note cc"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/remarqueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="146dp"
+        android:layout_height="68dp"
         android:layout_below="@id/noteCcTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:text="email"
+        android:textSize="18sp" />
 
 
 
