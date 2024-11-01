@@ -19,9 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListeClubs extends AppCompatActivity {
-  /*  private RecyclerView recyclerView;
-    private ClubAdapter ClubAdapter;
-    private MyDatabase appDatabase;*/
 
     private RecyclerView recyclerView;
     private ClubAdapter clubAdapter;

@@ -4,50 +4,48 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.myapplication.Entite.Club;
+
+import com.example.myapplication.Entite.Classe;
 import java.util.List;
 
-public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder> {
+public class ClasseAdapter extends RecyclerView.Adapter<ClasseAdapter.ClasseViewHolder> {
 
-    private List<Club> clubs;
+    private List<Classe> classes;
     private int selectedItem = RecyclerView.NO_POSITION;
-    private OnItemClickListener onItemClickListener;
+    private ClubAdapter.OnItemClickListener onItemClickListener;
 
-    public ClubAdapter(List<Club> clubs) {
-        this.clubs = clubs;
+    public ClasseAdapter(List<Classe> classes) {
+        this.classes = classes;
     }
 
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
-
-    public void setClubs(List<Club> clubs) {
-        this.clubs = clubs;
+    public void setClasses(List<Classe> classes) {
+        this.classes = classes;
         notifyDataSetChanged();
     }
-
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
+    public void setOnItemClickListener(ClubAdapter.OnItemClickListener listener) {
         this.onItemClickListener = listener;
     }
 
     @androidx.annotation.NonNull
     @Override
-    public ClubViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup parent, int viewType) {
+    public ClasseAdapter.ClasseViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club, parent, false);
-        return new ClubViewHolder(itemView);
+        return new ClasseAdapter.ClasseViewHolder(itemView);
     }
 
+
     @Override
-    public void onBindViewHolder(@androidx.annotation.NonNull ClubViewHolder holder, int position) {
-       // Enseignant enseignant = enseignants.get(position);
-    Club club = clubs.get(position);
-        holder.nomTextView.setText(club.getNom());
-        holder.presidentTextView.setText(club.getPresident());
-        holder.vicepTextView.setText(club.getVicep());
-        holder.descriptionTextView.setText(club.getDescription());
+    public void onBindViewHolder(@androidx.annotation.NonNull ClasseAdapter.ClasseViewHolder holder, int position) {
+        Classe classe = classes.get(position);
+        holder.nomTextView.setText(classe.getNom());
+        holder.specialiteTextView.setText(classe.getSpecialite());
+        holder.numeroTextViw.setText(classe.getNumero());
 
         // Highlight the selected item
         holder.itemView.setActivated(position == selectedItem);
@@ -70,24 +68,22 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
 
     @Override
     public int getItemCount() {
-        return clubs != null ? clubs.size() : 0;
+        return classes != null ? classes.size() : 0;
     }
 
-    static class ClubViewHolder extends RecyclerView.ViewHolder {
+    static class ClasseViewHolder extends RecyclerView.ViewHolder {
 
         TextView nomTextView;
-        TextView presidentTextView;
-        TextView vicepTextView;
-        TextView descriptionTextView;
+        TextView specialiteTextView;
+        TextView numeroTextViw;
 
 
-        public ClubViewHolder(@NonNull View itemView) {
+        public ClasseViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nomTextView = itemView.findViewById(R.id.nomTextView);
-            presidentTextView = itemView.findViewById(R.id.presidentTextView);
-            vicepTextView = itemView.findViewById(R.id.vicepTextView);
-            descriptionTextView = itemView.findViewById(R.id.descriptionTextView);
+            specialiteTextView = itemView.findViewById(R.id.presidentTextView);
+            numeroTextViw = itemView.findViewById(R.id.vicepTextView);
         }
     }
 }

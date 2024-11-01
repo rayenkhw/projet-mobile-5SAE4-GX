@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.example.myapplication.Entite.Club;
 import com.example.myapplication.Entite.MyDatabase;
+import com.example.myapplication.Interface.ClasseDao;
 import com.example.myapplication.Interface.ClubDao;
 
 public class AjoutClub extends AppCompatActivity {

@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -76,7 +77,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EnseignantViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull EnseignantViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d("Adapter", "onBindViewHolder called for position: " + position);
         Enseignant enseignant = enseignants.get(position);
 
