@@ -35,8 +35,6 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
         this.context = context;
     }
 
-
-
     public interface OnItemClickListener {
         void onItemClick(int position);
     }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -73,43 +74,12 @@ public class AjoutEtudiant extends AppCompatActivity {
         MyDatabase appDatabase=MyDatabase.getInstance(AjoutEtudiant.this);
         etudiantDao=appDatabase.etudiantDao();
     }
+
+
+
+
+
+
 }
 
-   /* private static class InsertAsyncTask extends AsyncTask<Void, Void, Void> {
-        private Context context;
-        private String nomClasse, nom, prenom, email, niveau, identifiant;
-
-        public InsertAsyncTask(Context context, String nomClasse, String nom, String prenom, String email, String niveau, String identifiant) {
-            this.context = context;
-            this.nomClasse = nomClasse;
-            this.nom = nom;
-            this.prenom = prenom;
-            this.email = email;
-            this.niveau = niveau;
-            this.identifiant = identifiant;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            // Get the class by name
-            ClasseDao classeDao = MyDatabase.getInstance(context).classeDao();
-            Classe classe = classeDao.getClasseByName(nomClasse);
-
-            if (classe != null) {
-                // Create and insert the student with the assigned classId
-                Etudiant etudiant = new Etudiant(nom, prenom, email, identifiant, niveau, classe.getId());
-                EtudiantDao etudiantDao = MyDatabase.getInstance(context).etudiantDao();
-                etudiantDao.insert(etudiant);
-
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            Toast.makeText(context, "Etudiant ajouté avec succès", Toast.LENGTH_SHORT).show();
-        }
-    }  */
 

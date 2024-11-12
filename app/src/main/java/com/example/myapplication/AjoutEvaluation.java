@@ -26,9 +26,9 @@ public class AjoutEvaluation extends AppCompatActivity {
         setContentView(R.layout.activity_ajout_evaluation);
 
         // Initialize views
-        noteExamenEditText = findViewById(R.id.editTextText2);
-        noteCcEditText = findViewById(R.id.editTextText3);
-        remarqueEditText = findViewById(R.id.textInputLayout);
+        noteExamenEditText = findViewById(R.id.editTextnoteexam);
+        noteCcEditText = findViewById(R.id.editTextnotecc);
+        remarqueEditText = findViewById(R.id.editTextremarque);
         ajouterEvaluationButton = findViewById(R.id.button);
 
         // Add click listener to the "Ajouter" button
@@ -43,7 +43,7 @@ public class AjoutEvaluation extends AppCompatActivity {
                 // Create an Evaluation object
                 Evaluation evaluation = new Evaluation(noteExamen, noteCc, remarque);
 
-                // Use Kotlin Coroutines to insert the Evaluation object on a background thread
+                // Insert the Evaluation object on a background thread
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {

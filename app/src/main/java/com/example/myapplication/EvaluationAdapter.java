@@ -9,40 +9,51 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.Entite.Enseignant;
 import com.example.myapplication.Entite.Evaluation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.EvaluationViewHolder> {
 
     public List<Evaluation> evaluations;
-    private Context context;
-    private OnItemClickListener onItemClickListener;
     private int selectedItem = RecyclerView.NO_POSITION;
+    private OnItemClickListener listener;
 
-    // Constructor
+    private OnItemClickListener onItemClickListener;
+    private Context context;
+
     public EvaluationAdapter(List<Evaluation> evaluations, Context context) {
         this.evaluations = evaluations;
-        this.context = context;
 
+        this.context = context;
     }
+
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
+
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.onItemClickListener = listener;
     }
+    // Helper method to update the list of evaluations
+    public void setEvaluations(List<Evaluation> evaluations) {
+        this.evaluations = evaluations;
+        notifyDataSetChanged();
+    }
 
-
-    // ViewHolder class
+    
     public class EvaluationViewHolder extends RecyclerView.ViewHolder {
         public TextView noteExamenTextView;
         public TextView noteCcTextView;
+        public TextView remarqueTextView;
 
         public EvaluationViewHolder(@NonNull View itemView) {
             super(itemView);
             noteExamenTextView = itemView.findViewById(R.id.noteExamenTextView);
             noteCcTextView = itemView.findViewById(R.id.noteCcTextView);
+            remarqueTextView = itemView.findViewById(R.id.remarqueTextView);
 
             // Set up the click listener for the item
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -70,9 +81,11 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
     public void onBindViewHolder(@NonNull EvaluationViewHolder holder, int position) {
         Evaluation currentEvaluation = evaluations.get(position);
 
-        // Set the data to the views
-        holder.noteExamenTextView.setText(currentEvaluation.noteExamen);
-        holder.noteCcTextView.setText(currentEvaluation.noteCc);
+        // Set data from getters if fields are private
+        holder.noteExamenTextView.setText(currentEvaluation.getNoteExamen());
+        holder.noteCcTextView.setText(currentEvaluation.getNoteCc());
+        holder.remarqueTextView.setText(currentEvaluation.getRemarque());
+
     }
 
     @Override
@@ -80,11 +93,7 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
         return evaluations.size();
     }
 
-    // Helper method to update the list of evaluations
-    public void setEvaluations(List<Evaluation> evaluations) {
-        this.evaluations = evaluations;
-        notifyDataSetChanged();
-    }
+
 
     public Evaluation getEvaluation(int position) {
         if (position >= 0 && position < evaluations.size()) {

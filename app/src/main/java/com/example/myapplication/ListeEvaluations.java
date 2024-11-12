@@ -69,18 +69,16 @@ public class ListeEvaluations extends AppCompatActivity {
     }
 
     private void loadEvaluations() {
-        // Use a background thread to retrieve the list of evaluations
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // Retrieve the list of evaluations from the Room database
                 EvaluationDao evaluationDao = MyDatabase.getInstance(ListeEvaluations.this).evaluationDao();
                 final List<Evaluation> evaluations = evaluationDao.getAllEvaluations();
 
-                // Update the adapter with the list of evaluations on the main thread
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        // Update adapter only on the main thread
                         evaluationAdapter.setEvaluations(evaluations);
                     }
                 });

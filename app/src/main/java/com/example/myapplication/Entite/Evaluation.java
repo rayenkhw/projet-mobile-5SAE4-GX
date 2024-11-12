@@ -9,14 +9,8 @@ public class Evaluation {
 
     @PrimaryKey(autoGenerate = true)
     public long id;
-
-    @ColumnInfo(name = "noteExamen")
     public String noteExamen;
-
-    @ColumnInfo(name = "noteCc")
     public String noteCc;
-
-    @ColumnInfo(name = "remarque")
     public String remarque;
 
     // Constructors
