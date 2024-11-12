@@ -51,7 +51,7 @@
         android:layout_marginBottom="27dp"
         android:ems="10"
         android:inputType="text"
-        android:text="prenom"
+        android:text="date"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextText2"
         app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
@@ -76,7 +76,7 @@
         android:layout_marginBottom="38dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Email"
+        android:text="Classe"
         app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
         app:layout_constraintStart_toStartOf="@+id/editTextText3"
         app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
@@ -88,7 +88,7 @@
         android:layout_marginBottom="66dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Identifiant"
+        android:text="materiel"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/editTextPhone"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
