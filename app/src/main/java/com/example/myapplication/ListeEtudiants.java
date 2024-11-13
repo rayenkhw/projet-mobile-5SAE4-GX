@@ -31,11 +31,7 @@ public class ListeEtudiants extends AppCompatActivity {
         recyclerView = findViewById(R.id.etudiantRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Initialize and set the adapter
-      //  etudiantAdapter = new EtudiantAdapter(new ArrayList<>(), this);
         etudiantAdapter = new EtudiantAdapter(new ArrayList<>());
-     //   recyclerView.setAdapter(etudiantAdapter);
-
         // Set item click listener
         etudiantAdapter.setOnItemClickListener(new EtudiantAdapter.OnItemClickListener() {
             @Override

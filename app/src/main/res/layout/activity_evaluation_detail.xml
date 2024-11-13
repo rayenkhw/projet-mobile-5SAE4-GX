@@ -36,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:inputType="textEmailAddress"
-        android:text="email"
+        android:text="Remarque"
         android:textSize="18sp" />
 
 

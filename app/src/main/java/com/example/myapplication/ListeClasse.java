@@ -25,14 +25,16 @@ public class ListeClasse extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajout_classe);
+        setContentView(R.layout.activity_liste_classe);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.clubRecyclerView);
+        recyclerView = findViewById(R.id.classeRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize and set the adapter
+        // Initialize and set the adapter
         classeAdapter = new ClasseAdapter(new ArrayList<>()); // Pass a non-null list here
+
 
         // Set item click listener
         classeAdapter.setOnItemClickListener(new ClasseAdapter.OnItemClickListener() {
@@ -42,57 +44,32 @@ public class ListeClasse extends AppCompatActivity {
                     Intent intent = new Intent(ListeClasse.this, ModifierEnseignant.class);
                     intent.putExtra("CLASSE_ID", classes.get(position).getId());
                     startActivity(intent);
-                }
-            }
-
-            @Override
-            public void onDeleteClick(int position) {
-                if (classes != null && position < classes.size()) {
-                    Classe classeToDelete = classes.get(position);
-                    ClasseDao classeDao = MyDatabase.getInstance(ListeClasse.this).classeDao();
-
-                    // Exécution de la suppression dans un thread secondaire
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            // Supprimer la classe dans la base de données
-                            classeDao.delete(classeToDelete);
-
-                            // Une fois l'opération terminée, mettre à jour la liste sur le thread principal
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    // Retirer la classe de la liste et mettre à jour l'adaptateur
-                                    classes.remove(position);
-                                    classeAdapter.setClasses(classes); // Mettre à jour la liste dans l'adaptateur
-                                }
-                            });
-                        }
-                    }).start();
+                } else {
+                    // Log or show a message indicating that the list is null or the position is invalid
                 }
             }
         });
 
+
         recyclerView.setAdapter(classeAdapter);
 
-        // Load the list of classes from your Room database
+        // Load the list of enseignants from your Room database
         loadClasses();
     }
-
     private void loadClasses() {
-        // Use a background thread to retrieve the list of classes
+        // Use a background thread to retrieve the list of enseignants
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // Retrieve the list of classes from the Room database
+                // Retrieve the list of enseignants from the Room database
                 ClasseDao classeDao = MyDatabase.getInstance(ListeClasse.this).classeDao();
                 final List<Classe> classes = classeDao.getAllClasses();
 
-                // Update the adapter with the list of classes on the main thread
+                // Update the adapter with the list of enseignants on the main thread
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        classeAdapter.setClasses(classes);
+                        classeAdapter.setClasses(classes);//setEnseignants(enseignants);
                     }
                 });
             }

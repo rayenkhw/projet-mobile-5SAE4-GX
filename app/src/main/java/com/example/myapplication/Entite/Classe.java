@@ -24,10 +24,6 @@ public class Classe {
     public String numero;
 
 
-    // Liste d'étudiants dans cette classe
-   // @Ignore
-   // public List<Etudiant> etudiants;
-
     public Classe() {
         // Constructeur sans arguments annoté avec @Ignore
         // Room ignorera ce constructeur lors de la création de la base de données

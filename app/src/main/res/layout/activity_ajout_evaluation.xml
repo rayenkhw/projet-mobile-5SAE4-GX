@@ -27,60 +27,54 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="236dp"
-        android:layout_height="67dp"
+        android:id="@+id/editTextnoteexam"
+        android:layout_width="310dp"
+        android:layout_height="97dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="131dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
+        android:hint="Note Examen"
         android:inputType="number"
-        android:text="Note Examen"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText3"
+        app:layout_constraintBottom_toTopOf="@+id/editTextnotecc"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="242dp"
-        android:layout_height="60dp"
+        android:id="@+id/editTextnotecc"
+        android:layout_width="311dp"
+        android:layout_height="99dp"
         android:layout_marginStart="1dp"
         android:layout_marginBottom="34dp"
         android:ems="10"
+        android:hint="Note cc"
         android:inputType="number"
-        android:text="Note cc"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextremarque"
+        app:layout_constraintStart_toStartOf="@+id/editTextnoteexam"
+        app:layout_constraintTop_toBottomOf="@+id/editTextnoteexam" />
 
     <EditText
-        android:id="@+id/textInputLayout"
+        android:id="@+id/editTextremarque"
         android:layout_width="308dp"
         android:layout_height="112dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="REMARQUE"
         android:inputType="text"
-        android:text="REMARQUE"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="@+id/editTextnoteexam"
+        app:layout_constraintTop_toBottomOf="@+id/editTextnotecc" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="181dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="119dp"
         android:text="Ajouter"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

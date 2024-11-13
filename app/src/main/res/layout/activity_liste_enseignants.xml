@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -55,7 +56,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prenom"
+            android:text="Date"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="245dp" />
 
@@ -69,14 +70,21 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="matiere"
+            android:text="Matiere"
             tools:layout_editor_absoluteX="164dp"
             tools:layout_editor_absoluteY="245dp" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="email"
+            android:text="Classe"
+            tools:layout_editor_absoluteX="246dp"
+            tools:layout_editor_absoluteY="245dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Materiel"
             tools:layout_editor_absoluteX="246dp"
             tools:layout_editor_absoluteY="245dp" />
 
@@ -104,11 +112,13 @@
         android:id="@+id/searchViewEnseignants"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
         app:layout_constraintBottom_toTopOf="@+id/buttonmodifier"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout3"
-        app:iconifiedByDefault="false"
+        app:layout_constraintVertical_bias="1.0"
         app:queryHint="Search Enseignants..." />
 
 

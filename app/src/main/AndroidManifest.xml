@@ -18,6 +18,9 @@
             android:name=".item_club"
             android:exported="false" />
         <activity
+            android:name=".ModifierClub"
+            android:exported="false" />
+        <activity
             android:name=".listClub1"
             android:exported="false" />
         <activity
@@ -34,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".AccueilPrincipal"
-            android:exported="false" />
-        <activity
-            android:name=".ModifierClub"
             android:exported="false" />
         <activity
             android:name=".AjoutEvaluation"

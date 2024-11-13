@@ -21,6 +21,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
 
     private List<Enseignant> enseignants;
     private int selectedItem = RecyclerView.NO_POSITION;
+    private OnItemClickListener listener;
 
     private List<Enseignant> filteredEnseignants;  // Add this line
 
@@ -85,6 +86,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
         holder.prenomTextView.setText(enseignant.getPrenom());
         holder.emailTextView.setText(enseignant.getEmail());
         holder.matiereTextView.setText(enseignant.getMatiere());
+        holder.identifiantTextView.setText(enseignant.getIdentifiant());
 
         // Highlight the selected item
         holder.itemView.setActivated(position == selectedItem);
@@ -102,6 +104,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
                 context.startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -117,7 +120,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
         TextView prenomTextView;
         TextView emailTextView;
         TextView matiereTextView;
-
+        TextView identifiantTextView;
         public EnseignantViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -125,6 +128,7 @@ public class EnseignantAdapter extends RecyclerView.Adapter<EnseignantAdapter.En
             prenomTextView = itemView.findViewById(R.id.prenomTextView);
             emailTextView = itemView.findViewById(R.id.emailTextView);
             matiereTextView = itemView.findViewById(R.id.matiereTextView);
+            identifiantTextView = itemView.findViewById(R.id.identifiantTextView);
         }
     }
 }
