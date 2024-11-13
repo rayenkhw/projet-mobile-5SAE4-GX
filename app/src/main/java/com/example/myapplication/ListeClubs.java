@@ -1,24 +1,22 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.SearchView;
+import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Toast;
-
 import com.example.myapplication.Entite.Club;
 import com.example.myapplication.Interface.ClubDao;
 import com.example.myapplication.Entite.MyDatabase;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListeClubs extends AppCompatActivity {
 
-    private static final int REQUEST_CODE_MODIFY_CLUB = 1; // Code for activity result
-
+    private static final int REQUEST_CODE_MODIFY_CLUB = 1; // Code pour l'activité de modification
     private RecyclerView recyclerView;
     private ClubAdapter clubAdapter;
     private List<Club> clubs = new ArrayList<>();
@@ -34,6 +32,23 @@ public class ListeClubs extends AppCompatActivity {
 
         // Initialiser et définir l'adaptateur
         clubAdapter = new ClubAdapter(new ArrayList<>());
+        recyclerView.setAdapter(clubAdapter);
+
+        // Configurer SearchView
+        SearchView searchView = findViewById(R.id.clubSearchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                clubAdapter.filterClubs(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                clubAdapter.filterClubs(newText);
+                return false;
+            }
+        });
 
         // Définir le listener pour les actions de modification et suppression
         clubAdapter.setOnItemClickListener(new ClubAdapter.OnItemClickListener() {
@@ -52,9 +67,6 @@ public class ListeClubs extends AppCompatActivity {
                 deleteClub(position);
             }
         });
-
-        // Définir l'adaptateur pour le RecyclerView
-        recyclerView.setAdapter(clubAdapter);
 
         // Charger la liste des clubs depuis la base de données
         loadClubs();
@@ -77,7 +89,7 @@ public class ListeClubs extends AppCompatActivity {
     }
 
     private void loadClubs() {
-        // Utiliser un thread en arrière-plan pour récupérer la liste des clubs
+        // Charger la liste des clubs en arrière-plan
         new Thread(() -> {
             ClubDao clubDao = MyDatabase.getInstance(ListeClubs.this).clubDao();
             final List<Club> clubsList = clubDao.getAllClubs();
@@ -101,7 +113,7 @@ public class ListeClubs extends AppCompatActivity {
     }
 
     private void deleteClub(final int position) {
-        // Supprimer le club de la base de données dans un thread séparé
+        // Supprimer le club de la base de données en arrière-plan
         new Thread(() -> {
             ClubDao clubDao = MyDatabase.getInstance(ListeClubs.this).clubDao();
             Club clubToDelete = clubs.get(position);
