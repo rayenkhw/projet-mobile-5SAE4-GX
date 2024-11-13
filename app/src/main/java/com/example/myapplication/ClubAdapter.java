@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.Entite.Club;
@@ -21,6 +22,8 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
 
     public interface OnItemClickListener {
         void onItemClick(int position);
+        void onUpdateClick(int position);  // Callback for the update action
+        void onDeleteClick(int position);  // Callback for the delete action
     }
 
     public void setClubs(List<Club> clubs) {
@@ -28,22 +31,20 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
         notifyDataSetChanged();
     }
 
-
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.onItemClickListener = listener;
     }
 
-    @androidx.annotation.NonNull
+    @NonNull
     @Override
-    public ClubViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup parent, int viewType) {
+    public ClubViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_club, parent, false);
         return new ClubViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@androidx.annotation.NonNull ClubViewHolder holder, int position) {
-       // Enseignant enseignant = enseignants.get(position);
-    Club club = clubs.get(position);
+    public void onBindViewHolder(@NonNull ClubViewHolder holder, int position) {
+        Club club = clubs.get(position);
         holder.nomTextView.setText(club.getNom());
         holder.presidentTextView.setText(club.getPresident());
         holder.vicepTextView.setText(club.getVicep());
@@ -52,25 +53,44 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
         // Highlight the selected item
         holder.itemView.setActivated(position == selectedItem);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Update selected item and notify the adapter
-                selectedItem = holder.getAdapterPosition();
-                notifyDataSetChanged();
+        // Set onClickListener for the item
+        holder.itemView.setOnClickListener(v -> {
+            selectedItem = holder.getAdapterPosition();
+            notifyDataSetChanged();
 
-                // Notify the activity/fragment about the item click
-                if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick(selectedItem);
-                }
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(selectedItem);
             }
         });
 
+        // Set onClickListener for the "Update" button
+        holder.updateButton.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onUpdateClick(position);
+            }
+        });
+
+        // Set onClickListener for the "Delete" button
+        holder.deleteButton.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onDeleteClick(position);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return clubs != null ? clubs.size() : 0;
+    }
+
+    public void updateItem(int position, Club updatedClub) {
+        clubs.set(position, updatedClub);
+        notifyItemChanged(position);
+    }
+
+    public void removeItem(int position) {
+        clubs.remove(position);
+        notifyItemRemoved(position);
     }
 
     static class ClubViewHolder extends RecyclerView.ViewHolder {
@@ -79,7 +99,8 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
         TextView presidentTextView;
         TextView vicepTextView;
         TextView descriptionTextView;
-
+        Button updateButton;  // Button for updating a club
+        Button deleteButton;  // Button for deleting a club
 
         public ClubViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -88,6 +109,8 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
             presidentTextView = itemView.findViewById(R.id.presidentTextView);
             vicepTextView = itemView.findViewById(R.id.vicepTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextView);
+            updateButton = itemView.findViewById(R.id.updateButton);  // Assuming you have a button in item_club.xml
+            deleteButton = itemView.findViewById(R.id.deleteButton);  // Assuming you have a button in item_club.xml
         }
     }
 }

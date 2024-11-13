@@ -15,8 +15,7 @@ public class GestionClub extends AppCompatActivity {
 
         androidx.cardview.widget.CardView gestionClubCard = findViewById(R.id.GestionClubCard);
         androidx.cardview.widget.CardView consulterClubCard = findViewById(R.id.consulterClubCard);
-        androidx.cardview.widget.CardView listEvenCard = findViewById(R.id.listEvenCard);
-        androidx.cardview.widget.CardView addEvenCard = findViewById(R.id.addEvenCard);
+
         ImageView backButton = findViewById(R.id.backbutton);
 
 
@@ -35,21 +34,7 @@ public class GestionClub extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        addEvenCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GestionClub.this, AjoutEvenement.class);
-                startActivity(intent);
-            }
-        });
 
-        listEvenCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GestionClub.this, ListeEvenement.class);
-                startActivity(intent);
-            }
-        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

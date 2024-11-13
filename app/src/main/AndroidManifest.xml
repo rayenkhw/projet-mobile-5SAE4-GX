@@ -36,6 +36,9 @@
             android:name=".AccueilPrincipal"
             android:exported="false" />
         <activity
+            android:name=".ModifierClub"
+            android:exported="false" />
+        <activity
             android:name=".AjoutEvaluation"
             android:exported="false" />
         <activity

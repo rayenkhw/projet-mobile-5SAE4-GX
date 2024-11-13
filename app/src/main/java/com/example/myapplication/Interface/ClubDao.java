@@ -24,4 +24,7 @@ public interface ClubDao {
 
     @Query("SELECT * FROM Club")
     List<Club> getAllClubs();
+    // Méthode pour récupérer un club par son ID
+    @Query("SELECT * FROM Club WHERE id = :clubId LIMIT 1")
+    Club getClubById(int clubId);
 }
