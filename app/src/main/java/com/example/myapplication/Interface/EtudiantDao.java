@@ -29,7 +29,7 @@ public interface EtudiantDao {
 
 
     @Query("SELECT * FROM Etudiant WHERE id = :id")
-    Enseignant getEtudiantById(long id);
+    Etudiant getEtudiantById(long id);
 
 }
 

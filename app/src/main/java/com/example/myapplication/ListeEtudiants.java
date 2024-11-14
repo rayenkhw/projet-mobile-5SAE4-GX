@@ -2,9 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ public class ListeEtudiants extends AppCompatActivity {
     private EtudiantAdapter etudiantAdapter;
 
     private List<Etudiant> etudiants = new ArrayList<>();
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,23 +33,39 @@ public class ListeEtudiants extends AppCompatActivity {
         recyclerView = findViewById(R.id.etudiantRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        etudiantAdapter = new EtudiantAdapter(new ArrayList<>());
+        etudiantAdapter = new EtudiantAdapter(new ArrayList<>(),this);
         // Set item click listener
+        recyclerView.setAdapter(etudiantAdapter);
+
         etudiantAdapter.setOnItemClickListener(new EtudiantAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                if (etudiants != null && position < etudiants.size()) {
-                    Intent intent = new Intent(ListeEtudiants.this, ModifierEnseignant.class);
-                    intent.putExtra("ETUDIANT_ID", etudiants.get(position).getId());
-                    startActivity(intent);
-                } else {
-                    // Log or show a message indicating that the list is null or the position is invalid
-                }
             }
+        });
+        // Initialize SearchView
+        searchView = findViewById(R.id.searchViewEtudiants);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Handle search query submit if needed
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Filter the list based on the search query
+                Log.d("SearchView", "Query: " + newText);
+                etudiantAdapter.filterEtudiants(newText);
+                return true;
+            }
+
+
         });
 
 
         recyclerView.setAdapter(etudiantAdapter);
+
+
+
 
         // Load the list of enseignants from your Room database
         loadEtudiant();

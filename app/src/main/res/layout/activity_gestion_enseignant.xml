@@ -137,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/addNoteImage"
                         android:layout_centerHorizontal="true"
-                        android:text="Ajout d'une note"
+                        android:text="Ajout d'une evaluation"
                         android:textColor="@color/violet"
                         android:textSize="13sp" />
                 </RelativeLayout>
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/listNoteImage"
                         android:layout_centerHorizontal="true"
-                        android:text="Consulter les notes"
+                        android:text="Consulter les evaluations"
                         android:textColor="@color/violet"
                         android:textSize="13sp" />
                 </RelativeLayout>
