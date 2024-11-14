@@ -84,27 +84,19 @@ public class ClasseAdapter extends RecyclerView.Adapter<ClasseAdapter.ClasseView
 
 
     @Override
-    public void onBindViewHolder(@NonNull ClasseAdapter.ClasseViewHolder holder,@SuppressLint("RecyclerView")  int position) {
-        Log.d("Adapter", "onBindViewHolder called for position: " + position);
-        Classe classe = classes.get(position);
+    public void onBindViewHolder(@NonNull ClasseAdapter.ClasseViewHolder holder, int position) {
+        Classe classe = filteredClasses.get(position);  // Utilisez filteredClasses ici
         holder.nomTextView.setText(classe.getNom());
         holder.specialiteTextView.setText(classe.getSpecialite());
         holder.numeroTextViw.setText(classe.getNumero());
 
-        // Highlight the selected item
-        holder.itemView.setActivated(position == selectedItem);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Update selected item and notify the adapter
-                Classe classe = classes.get(position);
-                // Launch EnseignantDetail activity
                 Intent intent = new Intent(context, ClasseModification.class);
-                intent.putExtra("CLASSE_ID", classe.getId());
+                intent.putExtra("CLASSE_ID", classe.getId());  // Transmettez bien l'ID
                 context.startActivity(intent);
             }
-
         });
     }
 
